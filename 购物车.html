@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        i {
+            font-style: normal;
+            color: red;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1300px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .box .box1 {
+            font-size: 50px;
+            color: red;
+        }
+
+        .box .box2 {
+            width: 60px;
+            font-size: 15px;
+            font-weight: 700;
+            color: red;
+            border-bottom: 1px red solid;
+            margin-top: 10px;
+        }
+
+        .box .nav {
+            width: 100%;
+            height: 35px;
+            background-color: hsl(0, 0%, 90%);
+            line-height: 35px;
+
+
+        }
+
+        .box .nav .nav-1 {
+            width: 100%;
+        }
+
+        .box .nav .nav-1 li {
+            float: left;
+            list-style: none;
+            font-size: 12px;
+            color: #333;
+            width: 150px;
+
+        }
+
+        .box .nav .nav-1 li:nth-child(3) {
+            margin-left: 390px;
+
+        }
+
+        .box .shang:nth-child(1) {
+            background-color: hsl(16, 100%, 95%);
+        }
+
+        .box .shang {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            border-top: 2px #999 solid;
+            border-bottom: 1px hsl(0, 0%, 90%) solid;
+            margin-top: 10px;
+            padding: 10px 0 0 10px;
+        }
+
+        .box .shang .che {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+
+        .box .shang .img {
+            display: inline-block;
+            width: 80px;
+            height: 100px;
+            border: 1px salmon solid;
+            font-size: 30px;
+            color: black;
+            line-height: 100px;
+            text-align: center;
+            margin-left: 110px;
+        }
+
+        .box .shang .fon {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .box .shang .jia {
+            display: inline-block;
+            color: #333;
+            margin: 0 105px 0 254px;
+        }
+
+        .box .shang .left {
+            position: absolute;
+            top: 60px;
+            right: 476px;
+        }
+
+        .box .shang .right {
+            position: absolute;
+            top: 60px;
+            right: 424px;
+        }
+
+        .box .shang .left,
+        .right {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: #999 1px solid;
+            background-color: #fff;
+            line-height: 15px;
+            text-align: center;
+        }
+
+        .box .shang .wen {
+            height: 15px;
+            width: 35px;
+            text-align: center;
+            border: #999 1px solid;
+            outline: none;
+        }
+
+        .box .shang .sum {
+            display: inline-block;
+            margin-left: 100px;
+        }
+
+        .box .shang .remove {
+            font-size: 10px;
+            margin-left: 100px;
+        }
+
+        .box .wei {
+
+            width: 100%;
+            height: 50px;
+            border: 1px hsl(0, 0%, 90%) solid;
+            margin: 15px 0 30px 0;
+            line-height: 50px;
+
+        }
+
+        .box .wei a {
+            margin-right: 20px;
+        }
+
+        .box .wei .wei-1 {
+            display: inline-block;
+            font-size: 12px;
+            width: 300px;
+            text-align: right;
+            margin-left: 755px;
+        }
+
+        .box .wei .wei-1 .jie {
+            display: inline-block;
+            height: 50px;
+            width: 70px;
+            background-color: red;
+            font-size: 15px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"><a href="javascript:" style="font-size: 60px; color: red;">购物车</a></div>
+        <div class="box2">全部商品</div>
+        <div class="nav">
+            <ul class="nav-1">
+                <li><input type="checkbox" class="all-che">全选</li>
+                <li>商品</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>小计</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <div class="shang">
+            <input type="checkbox" class="che">
+            <a href="javascript:" class="img">
+                商品
+            </a>
+            <a href="javascript:" class="fon">
+                经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲
+            </a>
+            <div class="jia">￥12.60</div>
+            <a href="javascript:" class="left">
+                -
+            </a>
+            <input type="text" class="wen" value="1">
+            <a href="javascript:" class="right">
+                +
+            </a>
+            <div class="sum">￥12.60</div>
+            <a href="javascript:" class="remove">
+                删除
+            </a>
+        </div>
+        <div class="shang">
+            <input type="checkbox" class="che">
+            <a href="javascript:" class="img">
+                商品
+            </a>
+            <a href="javascript:" class="fon">
+                经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲
+            </a>
+            <div class="jia">￥24.80</div>
+            <a href="javascript:" class="left">
+                -
+            </a>
+            <input type="text" class="wen" value="1">
+            <a href="javascript:" class="right">
+                +
+            </a>
+            <div class="sum">￥24.80</div>
+            <a href="javascript:" class="remove">
+                删除
+            </a>
+        </div>
+        <div class="shang">
+            <input type="checkbox" class="che">
+            <a href="javascript:" class="img">
+                商品
+            </a>
+            <a href="javascript:" class="fon">
+                经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲
+            </a>
+            <div class="jia">￥29.80</div>
+            <a href="javascript:" class="left">
+                -
+            </a>
+            <input type="text" class="wen" value="1">
+            <a href="javascript:" class="right">
+                +
+            </a>
+            <div class="sum">￥29.80</div>
+            <a href="javascript:" class="remove">
+                删除
+            </a>
+        </div>
+        <div class="wei">
+            <input type="checkbox" class="all-che"><a href="javascript:">全选</a>
+            <a href="javascript:" class="removes">删除选中商品</a>
+            <a href="javascript:" class="del">清空购物车</a>
+            <div class="wei-1">
+                已经选择<i class="shu">3</i>件商品
+                总价：<i class="money">￥67.20</i>
+                <a href="javascript:" class="jie">结算</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(function () {
+            // 全选模块
+            $(".all-che").change(function () {
+                // var flag = $(".all-che").prop("checked")
+                $(".che, .all-che").prop("checked", $(this).prop("checked"))
+            })
+            $(".shang .che").change(function () {
+                if ($(".che:checked").length == $(".shang").length) {
+                    $(".box").find(".all-che").prop("checked", true)
+                } else {
+                    $(".box").find(".all-che").prop("checked", false)
+                }
+            })
+
+            // 增数量模块
+            $(".right").click(function () {
+                // console.log($(".wen").val());
+
+                var n = $(this).siblings(".wen").val()
+                n++;
+                $(this).siblings(".wen").val(n)
+                // 修改商品的小计
+                var k = $(this).siblings(".jia").html()
+                k = k.substr(1);
+                // console.log(k);
+                $(this).siblings(".sum").text("￥" + parseFloat(k * n).toFixed(2))
+                getSum();
+            })
+            // 减数量模块
+            $(".left").click(function () {
+                var n = $(this).siblings(".wen").val()
+                if (n == 1) {
+                    return false;
+                }
+                n--;
+                $(this).siblings(".wen").val(n)
+                // 修改商品的小计
+                var k = $(this).siblings(".jia").html()
+                k = k.substr(1);
+                // console.log(k);
+                $(this).siblings(".sum").text("￥" + parseFloat(k * n).toFixed(2))
+                getSum();
+            })
+            // 表单内容发生变化
+            $(".wen").change(function () {
+                // 先得到文本框的值 乘以 当前商品的单价
+                var sum = $(this).val()
+                var k = $(this).siblings(".jia").html()
+                k = k.substr(1);
+                $(this).siblings(".sum").text("￥" + parseFloat(sum * k).toFixed(2))
+                getSum();
+            })
+
+            // 商品总数量模块
+            getSum();  //提前检测商品数量
+            function getSum() {
+                var count = 0;  // 计算总件数
+                var money = 0;  // 计算总价钱
+                $(".wen").each(function (i, ele) {
+                    count += parseInt($(ele).val());
+                })
+                $(".shu").text(count)
+                $(".sum").each(function(i, ele) {
+                    money += parseFloat($(ele).text().substr(1))
+                })
+                $(".money").text("￥" + money.toFixed(2))
+            }
+
+
+            // 删除单个商品模块
+            $(".remove").click(function() {
+                $(this).parent(".shang").remove()
+                getSum();
+            })
+            // 删除全部商品模块
+            $(".del").click(function() {
+                $(".box .shang").remove();
+                getSum();
+            })
+            // 删除选中商品模块
+            $(".removes").click(function() {
+               $(".che:checked").parent(".shang").remove()
+               getSum()
+            })
+
+        })
+    </script>
+</body>
+
+</html>
